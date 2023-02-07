@@ -17,7 +17,7 @@ app.use("/api/v1/bkash", bkashRouter);
 
 app.get("/", authCheck, (req, res) => {
   try {
-    res.send("hlw bkash");
+    res.sendFile(__dirname + '/index.html')
   } catch (e) {
     console.log(e);
   }

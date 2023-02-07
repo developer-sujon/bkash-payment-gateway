@@ -1,7 +1,7 @@
 const bkashConfig = require("../config/bkashConfig.json");
 const globals = require("node-global-storage");
 
-const authHeaders = async () => {  
+const authHeaders = async () => {
   return {
     "Content-Type": "application/json",
     Accept: "application/json",

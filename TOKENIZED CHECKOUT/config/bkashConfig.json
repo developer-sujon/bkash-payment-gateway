@@ -6,9 +6,9 @@
   "query_payment_url": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/payment/status",
   "search_transaction_url": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/search/searchTransaction",
   "refund_transaction_url": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/payment/refund",
-  "callback_url": "http://localhost:8080/api/v1/bkash/executePayment",
-  "username": "01740700707",
-  "password": "O8HOu|G|s0p",
-  "app_key": "mmSwIdYqQeuMKyu1HYOK8CFmtc",
-  "app_secret": "mmSwIdYqQeuMKyu1HYOK8CFmtc"
+  "callback_url": "http://localhost:4000/bkash/callback",
+  "username": "sandboxTokenizedUser02",
+  "password": "sandboxTokenizedUser02@12345",
+  "app_key": "4f6o0cjiki2rfm34kfdadl1eqq",
+  "app_secret": "2is7hdktrekvrbljjh44ll3d9l1dtjo4pasmjvs5vl5qr3fug4b"
 }
