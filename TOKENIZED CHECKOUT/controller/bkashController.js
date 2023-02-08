@@ -15,12 +15,14 @@ const checkout = async (req, res) => {
 const bkashCallback = async (req, res) => {
   try {
     if (req.query.status === "success") {
-      return res.send(await executePayment(req.query.paymentID));
+      let response = await executePayment(req.query.paymentID);
+      if (response.statusCode !== "0000") {
+        res.send(response.statusMessage);
+      }
+      res.send(response);
     } else {
-      return res.send("Payment " + req.query.status);
+      res.send("Payment " + req.query.status);
     }
-
-    res.send(await executePayment(req.query.paymentID));
   } catch (e) {
     console.log(e);
   }
