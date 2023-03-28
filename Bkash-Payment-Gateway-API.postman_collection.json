@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "24ce934f-262a-4d27-aa38-4637447ac51d",
+		"name": "Bkash-Payment-Gateway-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19667438"
+	},
+	"item": [
+		{
+			"name": "CHECKOUT (URL BASED)",
+			"item": [
+				{
+					"name": "createPayment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ispOwnerId\": \"6267362e9232748727c920de\",\r\n    \"customer\": \"6267362e9232748727c920de\",\r\n    \"user\": \"6267362e9232748727c920de\",\r\n    \"userType\": \"pppoe\",\r\n    \"medium\": \"bKash\",\r\n    \"paymentStatus\": \"pending\",\r\n    \"package\": \"10Mbps\",\r\n    \"currency\": \"BDT\",\r\n    \"amount\": 2000,\r\n    \"merchantInvoiceNumber\": \"23423424dsfdsf\",\r\n    \"intent\": \"sale\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/createPayment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"createPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "executePayment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/executePayment/TR0011IU1675693767807",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"executePayment",
+								"TR0011IU1675693767807"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "queryPayment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trxID\":\"ACE0H13RVQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/queryPayment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"queryPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchTransaction",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/queryPayment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"queryPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refundTransaction",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": \"1\",\r\n    \"paymentID\": \"YMUBWBZ1671105298745\",\r\n    \"trxID\": \"9LF9R7NM8H\",\r\n    \"sku\": \"test\",\r\n    \"reason\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/refundTransaction",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"refundTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refundStatus",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentID\": \"YMUBWBZ1671105298745\",\r\n    \"trxID\": \"9LF9R7NM8H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/refundStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"refundStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TOKENIZED CHECKOUT",
+			"item": [
+				{
+					"name": "createPayment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ispOwnerId\": \"6267362e9232748727c920de\",\r\n    \"customer\": \"6267362e9232748727c920de\",\r\n    \"user\": \"6267362e9232748727c920de\",\r\n    \"userType\": \"pppoe\",\r\n    \"medium\": \"bKash\",\r\n    \"paymentStatus\": \"pending\",\r\n    \"package\": \"10Mbps\",\r\n    \"currency\": \"BDT\",\r\n    \"amount\": 2000,\r\n    \"merchantInvoiceNumber\": \"23423424dsfdsf\",\r\n    \"intent\": \"sale\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/createPayment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"createPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "executePayment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ispOwnerId\": \"6267362e9232748727c920de\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/executePayment?paymentID=TR0011WK1678893092780&status=success",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"executePayment"
+							],
+							"query": [
+								{
+									"key": "paymentID",
+									"value": "TR0011WK1678893092780"
+								},
+								{
+									"key": "status",
+									"value": "success"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "queryPayment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trxID\":\"ACE0H13RVQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/queryPayment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"queryPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refundTransaction",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": \"1\",\r\n    \"paymentID\": \"YMUBWBZ1671105298745\",\r\n    \"trxID\": \"9LF9R7NM8H\",\r\n    \"sku\": \"test\",\r\n    \"reason\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/refundTransaction",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"refundTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refundStatus",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentID\": \"YMUBWBZ1671105298745\",\r\n    \"trxID\": \"9LF9R7NM8H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/refundStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"refundStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchTransaction",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/bkash/searchTransaction/9LF9R7NM8H",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"bkash",
+								"searchTransaction",
+								"9LF9R7NM8H"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmVmOTBhZDI2ZTRlZDNkMDdjYWUzOGIiLCJpYXQiOjE2NzU4NjU4NzEsImV4cCI6MTY3ODQ1Nzg3MSwidHlwZSI6ImFjY2VzcyJ9.lnxdZc9-fL8VwiYceQ7rn8TdKuHed1fptuswqsyWIso",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080/api/v1",
+			"type": "string"
+		}
+	]
+}

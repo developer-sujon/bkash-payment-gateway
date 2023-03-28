@@ -1,0 +1,53 @@
+{
+    "statusCode": "0000",
+    "statusMessage": "Successful",
+    "paymentID": "TR0011WA1678725558111",
+    "bkashURL": "https://sandbox.payment.bkash.com/redirect/tokenized/?paymentID=TR0011WA1678725558111&hash=(e5I6WNWGiC7EYSIOX3iNrbE)1pKWmiCEea7y5J3coqx4PaADN1wQkLwFJS5HmmLCI8-vA4X3LpQ4DZD1*(9S!PF!BL5tTooBpuX1678725558518&mode=0011&apiVersion=v1.2.0-beta",
+    "callbackURL": "http://localhost:4000/bkash/callback",
+    "successCallbackURL": "http://localhost:4000/bkash/callback?paymentID=TR0011WA1678725558111&status=success",
+    "failureCallbackURL": "http://localhost:4000/bkash/callback?paymentID=TR0011WA1678725558111&status=failure",
+    "cancelledCallbackURL": "http://localhost:4000/bkash/callback?paymentID=TR0011WA1678725558111&status=cancel",
+    "amount": "2000",
+    "intent": "sale",
+    "currency": "BDT",
+    "paymentCreateTime": "2023-03-13T22:39:18:518 GMT+0600",
+    "transactionStatus": "Initiated",
+    "merchantInvoiceNumber": "23423424dsfdsf"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "statusCode": "0000",
+    "statusMessage": "Successful",
+    "paymentID": "TR0011WA1678725558111",
+    "payerReference": " ",
+    "customerMsisdn": "01877722345",
+    "trxID": "ACD70AI33N",
+    "amount": "2000",
+    "transactionStatus": "Completed",
+    "paymentExecuteTime": "2023-03-13T22:41:48:883 GMT+0600",
+    "currency": "BDT",
+    "intent": "sale",
+    "merchantInvoiceNumber": "23423424dsfdsf"
+}
+
+
+
+
+
+
+
+
+
+
+
